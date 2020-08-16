@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-caseeye
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: mysql
+          image: 10.50.10.46:5000/mysql5:0.0.2
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 3306
+          envFrom:
+            - configMapRef:
+                name: mysql-config
+          volumeMounts:
+            - mountPath: /home/mysql/mysql5/data
+              name: mysql-persistent-storage
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: mysql-pv-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-caseeye-service
+  labels:
+    app: mysql
+spec:
+  type: NodePort
+  ports:
+   - port: 3306
+     name: 3306-3306
+     targetPort: 3306
+     protocol: TCP
+     nodePort: 31306
+  selector:
+   app: mysql
