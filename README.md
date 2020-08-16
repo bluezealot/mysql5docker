@@ -11,7 +11,7 @@ Args:
 3) There is a mount point "/home/mysql/mysql5/data" , you can use it for persistence purpose.<br />
 
 # Cautions
-As mysql isn't running under root previlege, so if you mount you folder to "/home/mysql/mysql5/data", access denied error shold happen. 
+As mysql isn't running under root previlege, so if you mount you folder to "/home/mysql/mysql5/data", access denied error should happen. 
 Here is the steps to meet the system previlege.
 1) Create your folder.<br />
 2) Run the following command to authorise mysql image.<br />
