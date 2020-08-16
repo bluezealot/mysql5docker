@@ -12,7 +12,7 @@ Args:
 
 # Cautions
 As mysql isn't running under root previlege, so if you mount your folder to "/home/mysql/mysql5/data", access denied error should happen. 
-Here is the steps to meet the system previlege.
+Here is the steps to meet the required previlege.
 1) Create your folder.<br />
 2) Run the following command to authorise mysql image.<br />
 (This docker image is running under user 1001, group 1001.)<br />
