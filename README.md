@@ -21,6 +21,6 @@ Here is the steps to meet the required previlege.
 ```
 
 # About k8s
-The content of k8s_deployment folder shows configurations that is used to deploy this image to k8s.<br />
+The content of k8s_deployment folder shows configurations that are used to deploy this image to k8s.<br />
 These ymls are used under my server environment, so they are for reference purpose.<br />
 You need to download them and modify them to match your environment before your deployment.<br />
