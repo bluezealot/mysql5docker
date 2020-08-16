@@ -23,9 +23,9 @@ RUN rm ~/mysql.tar.gz
 WORKDIR $basedir
 COPY mysql_dockerEntrypoint.sh mysql_dockerEntrypoint.sh
 USER root
-RUN chmod 777 mysql_dockerEntrypoint.sh
-RUN chown -R $uid:$gid ../
-RUN chmod -R 777 ../
+RUN chmod 777 mysql_dockerEntrypoint.sh && \
+    chown -R $uid:$gid ../ && \
+    chmod -R 777 ../
 USER mysql
 EXPOSE 3306
 VOLUME $basedir/data
