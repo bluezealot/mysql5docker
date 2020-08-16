@@ -1,7 +1,7 @@
 # mysql5docker
 This is a mysql 5.0 docker image. The official docker image hasn't the old versions, so you can take advantage of this image if it is needed.
 
-# Useage
+# Usage
 ```sh
 docker run -p 3306:3306 -e MYSQL_ROOT_HOST='%' -e MYSQL_ROOT_PASSWORD=root123 bluezealot/mysql5:0.0.1
 ```
